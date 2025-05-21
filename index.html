@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pure Bloom - Natural Shampoo & Handwash</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#e75480',secondary:'#8fbc8f'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Poppins', sans-serif;
+}
+.cart-panel {
+transform: translateX(100%);
+transition: transform 0.3s ease-in-out;
+}
+.cart-panel.open {
+transform: translateX(0);
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+input[type="number"] {
+-moz-appearance: textfield;
+}
+.custom-checkbox {
+position: relative;
+display: inline-block;
+width: 20px;
+height: 20px;
+border: 2px solid #e75480;
+border-radius: 4px;
+cursor: pointer;
+}
+.custom-checkbox.checked::after {
+content: '';
+position: absolute;
+top: 2px;
+left: 6px;
+width: 6px;
+height: 10px;
+border: solid #e75480;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.custom-radio {
+position: relative;
+display: inline-block;
+width: 20px;
+height: 20px;
+border: 2px solid #e75480;
+border-radius: 50%;
+cursor: pointer;
+}
+.custom-radio.checked::after {
+content: '';
+position: absolute;
+top: 4px;
+left: 4px;
+width: 8px;
+height: 8px;
+border-radius: 50%;
+background-color: #e75480;
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Navigation -->
+<header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<a href="#" class="flex items-center space-x-2">
+<span class="text-3xl font-['Pacifico'] text-primary">Pure Bloom</span>
+<span class="text-sm text-gray-600 mt-2">Natural Care</span>
+</a>
+<nav class="hidden md:flex items-center space-x-8">
+<a href="#" class="font-medium text-gray-800 hover:text-primary transition">Home</a>
+<a href="#products" class="font-medium text-gray-800 hover:text-primary transition">Products</a>
+<a href="#about" class="font-medium text-gray-800 hover:text-primary transition">About Us</a>
+<a href="#how-its-made" class="font-medium text-gray-800 hover:text-primary transition">How It's Made</a>
+<a href="#team" class="font-medium text-gray-800 hover:text-primary transition">Team</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button id="cart-button" class="relative w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition">
+<i class="ri-shopping-cart-2-line ri-lg"></i>
+<span id="cart-count" class="absolute -top-1 -right-1 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+</button>
+<button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+<div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+<a href="#" class="py-2 font-medium text-gray-800 hover:text-primary transition">Home</a>
+<a href="#products" class="py-2 font-medium text-gray-800 hover:text-primary transition">Products</a>
+<a href="#about" class="py-2 font-medium text-gray-800 hover:text-primary transition">About Us</a>
+<a href="#how-its-made" class="py-2 font-medium text-gray-800 hover:text-primary transition">How It's Made</a>
+<a href="#team" class="py-2 font-medium text-gray-800 hover:text-primary transition">Team</a>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="pt-24 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=A%20beautiful%2C%20high-quality%20product%20photography%20scene%20with%20strawberry-infused%20natural%20shampoo%20and%20handwash%20bottles%20on%20a%20white%20marble%20surface%20with%20fresh%20strawberries%20and%20green%20leaves%20scattered%20around.%20The%20left%20side%20has%20a%20clean%20white%20gradient%20background%20that%20smoothly%20transitions%20to%20the%20product%20display%20on%20the%20right.%20Soft%20natural%20lighting%2C%20minimalist%20elegant%20styling.&width=1920&height=1080&seq=hero1&orientation=landscape');"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/30"></div>
+<div class="container mx-auto px-4 py-20 relative">
+<div class="w-full md:w-1/2 lg:w-2/5">
+<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Nature's Freshness in Every Drop</h1>
+<p class="text-lg text-gray-700 mb-8">Experience the refreshing power of natural strawberry extracts with our Pure Bloom shampoo and Pure Nature Splash handwash. Made with love, care, and the finest ingredients.</p>
+<div class="flex flex-wrap gap-4">
+<a href="#products" class="px-8 py-3 bg-primary text-white font-medium !rounded-button whitespace-nowrap hover:bg-primary/90 transition">Shop Now</a>
+<a href="#how-its-made" class="px-8 py-3 border border-primary text-primary font-medium !rounded-button whitespace-nowrap hover:bg-primary/10 transition">Learn More</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Products Section -->
+<section id="products" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Our Products</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Discover our premium strawberry-infused products made with natural ingredients to nourish and protect.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+<!-- Shampoo Product Card -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-lg">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20premium%2C%20elegant%20bottle%20of%20shampoo%20with%20a%20transparent%20design%20showing%20a%20light%20pink-colored%20liquid%20inside.%20The%20bottle%20has%20a%20sleek%20pump%20dispenser.%20The%20bottle%20prominently%20displays%20the%20text%20Pure%20Bloom%20Shampoo%20in%20an%20elegant%20font.%20Professional%20product%20photography%20with%20soft%20lighting%20against%20a%20clean%20white%20background%20with%20subtle%20pink%20floral%20elements%20and%20strawberries%20as%20decoration.&width=600&height=600&seq=shampoo2&orientation=squarish" alt="Pure Bloom Shampoo" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Pure Bloom Shampoo</h3>
+<p class="text-gray-600 mb-4">Enriched with strawberry extracts and natural oils to give your hair a silky smooth texture and irresistible fragrance.</p>
+<div class="flex justify-between items-center">
+<span class="text-xl font-bold text-primary">$24.99</span>
+<button class="add-to-cart-btn px-6 py-2 bg-primary text-white font-medium !rounded-button whitespace-nowrap hover:bg-primary/90 transition" data-id="1" data-name="Pure Bloom Shampoo" data-price="24.99" data-image="https://static.readdy.ai/image/b311f10733d8be60d7148ba9ecdbc42a/7b06fb2034d812794b051b1b43cba4e5.png">
+<span class="flex items-center">
+<i class="ri-shopping-cart-add-line mr-2"></i>
+Add to Cart
+</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Handwash Product Card -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-lg">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20modern%2C%20elegant%20bottle%20of%20handwash%20with%20a%20transparent%20design%20showing%20a%20light%20green-colored%20liquid%20inside.%20The%20bottle%20has%20a%20sleek%20pump%20dispenser%20and%20prominently%20displays%20the%20text%20Pure%20Natural%20Splash%20Handwash%20in%20an%20elegant%20font.%20Professional%20product%20photography%20with%20soft%20lighting%20against%20a%20clean%20white%20background%20with%20subtle%20green%20leaves%20and%20strawberries%20as%20decoration.&width=600&height=600&seq=handwash2&orientation=squarish" alt="Pure Nature Splash Handwash" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Pure Nature Splash Handwash</h3>
+<p class="text-gray-600 mb-4">A gentle cleansing formula with strawberry extracts that leaves your hands feeling soft, refreshed, and naturally scented.</p>
+<div class="flex justify-between items-center">
+<span class="text-xl font-bold text-primary">$18.99</span>
+<button class="add-to-cart-btn px-6 py-2 bg-primary text-white font-medium !rounded-button whitespace-nowrap hover:bg-primary/90 transition" data-id="2" data-name="Pure Nature Splash Handwash" data-price="18.99" data-image="https://readdy.ai/api/search-image?query=A%20modern%2C%20elegant%20bottle%20of%20handwash%20with%20a%20transparent%20design%20showing%20a%20light%20green-colored%20liquid%20inside.%20The%20bottle%20has%20a%20sleek%20pump%20dispenser%20and%20prominently%20displays%20the%20text%20Pure%20Natural%20Splash%20Handwash%20in%20an%20elegant%20font.%20Professional%20product%20photography%20with%20soft%20lighting%20against%20a%20clean%20white%20background%20with%20subtle%20green%20leaves%20and%20strawberries%20as%20decoration.&width=600&height=600&seq=handwash2&orientation=squarish">
+<span class="flex items-center">
+<i class="ri-shopping-cart-add-line mr-2"></i>
+Add to Cart
+</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How It's Made Section -->
+<section id="how-its-made" class="py-20">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">How It's Made</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Our commitment to quality begins with our carefully crafted production process.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div>
+<img src="https://readdy.ai/api/search-image?query=A%20modern%20laboratory%20setting%20where%20natural%20cosmetics%20are%20being%20made.%20Scientists%20in%20white%20lab%20coats%20carefully%20extracting%20strawberry%20essence%20and%20mixing%20it%20with%20other%20natural%20ingredients.%20The%20lab%20has%20clean%2C%20bright%20lighting%20with%20glass%20beakers%2C%20measuring%20equipment%2C%20and%20fresh%20strawberries%20visible%20on%20the%20workstation.%20The%20scene%20shows%20the%20meticulous%20process%20of%20creating%20natural%20shampoo%20and%20handwash%20products.&width=600&height=400&seq=making1&orientation=landscape" alt="Production Process" class="w-full h-80 object-cover object-top rounded-lg shadow-md">
+</div>
+<div class="space-y-6">
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2 flex items-center">
+<span class="flex items-center justify-center w-8 h-8 bg-primary text-white rounded-full mr-3">1</span>
+Ingredient Selection
+</h3>
+<p class="text-gray-600 pl-11">We carefully select the finest organic strawberries and natural ingredients, ensuring each component meets our strict quality standards.</p>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2 flex items-center">
+<span class="flex items-center justify-center w-8 h-8 bg-primary text-white rounded-full mr-3">2</span>
+Extraction Process
+</h3>
+<p class="text-gray-600 pl-11">Our proprietary cold-press extraction preserves the natural benefits of strawberries, capturing their essence without harsh chemicals.</p>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2 flex items-center">
+<span class="flex items-center justify-center w-8 h-8 bg-primary text-white rounded-full mr-3">3</span>
+Formulation
+</h3>
+<p class="text-gray-600 pl-11">Our team of expert chemists blend the strawberry extracts with other natural ingredients to create our signature formulas.</p>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2 flex items-center">
+<span class="flex items-center justify-center w-8 h-8 bg-primary text-white rounded-full mr-3">4</span>
+Quality Testing
+</h3>
+<p class="text-gray-600 pl-11">Every batch undergoes rigorous testing for purity, effectiveness, and safety before being approved for packaging.</p>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2 flex items-center">
+<span class="flex items-center justify-center w-8 h-8 bg-primary text-white rounded-full mr-3">5</span>
+Sustainable Packaging
+</h3>
+<p class="text-gray-600 pl-11">Our products are packaged in eco-friendly materials that minimize environmental impact while preserving product integrity.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Us Section -->
+<section id="about" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">About Pure Bloom</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Our journey to create the perfect natural products for your daily routine.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1">
+<h3 class="text-2xl font-semibold text-gray-900 mb-4">Our Story</h3>
+<p class="text-gray-600 mb-4">Pure Bloom was founded in 2018 by a team of passionate individuals who believed that personal care products should be as natural as they are effective. Our journey began with a simple idea: to harness the power of strawberries and other natural ingredients to create products that nourish and protect.</p>
+<h3 class="text-2xl font-semibold text-gray-900 mb-4 mt-8">Our Mission</h3>
+<p class="text-gray-600 mb-4">We are committed to creating premium, natural products that enhance your daily routine while respecting our planet. Every ingredient we use is carefully selected for its benefits and environmental impact.</p>
+<h3 class="text-2xl font-semibold text-gray-900 mb-4 mt-8">Our Commitment</h3>
+<div class="grid grid-cols-2 gap-4 mt-4">
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-3">
+<i class="ri-leaf-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">100% Natural</h4>
+<p class="text-sm text-gray-600">No harmful chemicals</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-3">
+<i class="ri-test-tube-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Cruelty-Free</h4>
+<p class="text-sm text-gray-600">Never tested on animals</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-3">
+<i class="ri-recycle-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Eco-Friendly</h4>
+<p class="text-sm text-gray-600">Sustainable packaging</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-3">
+<i class="ri-heart-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Dermatologist Approved</h4>
+<p class="text-sm text-gray-600">Safe for all skin types</p>
+</div>
+</div>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<img src="https://readdy.ai/api/search-image?query=A%20beautifully%20arranged%20display%20of%20natural%20cosmetic%20ingredients%20focused%20on%20strawberries.%20The%20image%20shows%20fresh%20strawberries%2C%20botanical%20extracts%2C%20essential%20oils%20in%20small%20glass%20bottles%2C%20and%20natural%20ingredients%20used%20in%20making%20shampoo%20and%20handwash.%20The%20arrangement%20is%20on%20a%20light%20wooden%20surface%20with%20some%20green%20leaves%20for%20decoration.%20The%20lighting%20is%20bright%20and%20natural%2C%20creating%20a%20clean%2C%20fresh%20aesthetic%20that%20represents%20a%20natural%20cosmetics%20brand.&width=600&height=800&seq=about1&orientation=portrait" alt="About Pure Bloom" class="w-full h-auto rounded-lg shadow-md">
+</div>
+</div>
+</div>
+</section>
+<!-- Team Section -->
+<section id="team" class="py-20">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">The passionate individuals behind Pure Bloom who make our products possible.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Team Member 1 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-lg">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20portrait%20of%20a%20female%20CEO%20in%20her%20early%2040s%20with%20shoulder-length%20brown%20hair.%20She%20is%20wearing%20a%20light-colored%20blazer%20and%20has%20a%20warm%2C%20confident%20smile.%20The%20background%20is%20neutral%20and%20the%20lighting%20is%20soft%20and%20professional.%20The%20image%20has%20a%20clean%2C%20corporate%20feel%20suitable%20for%20a%20company%20website.&width=400&height=500&seq=team1&orientation=portrait" alt="Emily Richardson" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-4 text-center">
+<h3 class="text-lg font-semibold text-gray-900">Emily Richardson</h3>
+<p class="text-primary font-medium">Founder & CEO</p>
+<p class="text-gray-600 text-sm mt-2">With over 15 years in natural cosmetics, Emily leads our vision for sustainable beauty products.</p>
+</div>
+</div>
+<!-- Team Member 2 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-lg">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20portrait%20of%20a%20male%20scientist%20in%20his%20late%2030s%20with%20short%20dark%20hair%20and%20glasses.%20He%20is%20wearing%20a%20white%20lab%20coat%20over%20a%20blue%20shirt%20and%20has%20a%20thoughtful%2C%20intelligent%20expression.%20The%20background%20is%20neutral%20and%20the%20lighting%20is%20clean%20and%20professional.%20The%20image%20has%20a%20scientific%2C%20trustworthy%20feel%20suitable%20for%20a%20company%20website.&width=400&height=500&seq=team2&orientation=portrait" alt="Dr. Michael Chen" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-4 text-center">
+<h3 class="text-lg font-semibold text-gray-900">Dr. Michael Chen</h3>
+<p class="text-primary font-medium">Chief Scientist</p>
+<p class="text-gray-600 text-sm mt-2">Michael's expertise in botanical chemistry helps us create effective, natural formulations.</p>
+</div>
+</div>
+<!-- Team Member 3 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-lg">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20portrait%20of%20a%20female%20product%20designer%20in%20her%20early%2030s%20with%20curly%20hair.%20She%20is%20wearing%20a%20stylish%20yet%20professional%20outfit%20in%20earth%20tones%20and%20has%20a%20creative%2C%20approachable%20expression.%20The%20background%20is%20neutral%20and%20the%20lighting%20is%20modern%20and%20artistic.%20The%20image%20has%20a%20creative%2C%20design-focused%20feel%20suitable%20for%20a%20company%20website.&width=400&height=500&seq=team3&orientation=portrait" alt="Sophia Martinez" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-4 text-center">
+<h3 class="text-lg font-semibold text-gray-900">Sophia Martinez</h3>
+<p class="text-primary font-medium">Product Designer</p>
+<p class="text-gray-600 text-sm mt-2">Sophia ensures our products are as beautiful as they are functional and environmentally conscious.</p>
+</div>
+</div>
+<!-- Team Member 4 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-lg">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20portrait%20of%20a%20male%20sustainability%20director%20in%20his%20mid-40s%20with%20salt%20and%20pepper%20hair%20and%20a%20short%20beard.%20He%20is%20wearing%20a%20green%20sweater%20over%20a%20collared%20shirt%20and%20has%20a%20friendly%2C%20passionate%20expression.%20The%20background%20suggests%20nature%20with%20soft%20greens.%20The%20lighting%20is%20natural%20and%20warm.%20The%20image%20has%20an%20eco-conscious%2C%20authentic%20feel%20suitable%20for%20a%20company%20website.&width=400&height=500&seq=team4&orientation=portrait" alt="James Wilson" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-4 text-center">
+<h3 class="text-lg font-semibold text-gray-900">James Wilson</h3>
+<p class="text-primary font-medium">Sustainability Director</p>
+<p class="text-gray-600 text-sm mt-2">James leads our initiatives to minimize environmental impact and maximize social responsibility.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-4">
+<div class="grid md:grid-cols-4 gap-8">
+<div>
+<a href="#" class="text-3xl font-['Pacifico'] text-white mb-4 block">Pure Bloom</a>
+<p class="text-gray-400 mb-4">Natural care products made with love and respect for nature.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition">
+<i class="ri-twitter-x-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition">
+<i class="ri-pinterest-line"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+<li><a href="#products" class="text-gray-400 hover:text-white transition">Products</a></li>
+<li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+<li><a href="#how-its-made" class="text-gray-400 hover:text-white transition">How It's Made</a></li>
+<li><a href="#team" class="text-gray-400 hover:text-white transition">Team</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+<ul class="space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-map-pin-line"></i>
+</div>
+<span class="text-gray-400">123 Nature Way, Strawberry Hills, CA 94103</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-phone-line"></i>
+</div>
+<span class="text-gray-400">+1 (555) 123-4567</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2 mt-1">
+<i class="ri-mail-line"></i>
+</div>
+<span class="text-gray-400">info@purebloom.com</span>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+<p class="text-gray-400 mb-4">Subscribe to receive updates on new products and special offers.</p>
+<form class="flex">
+<input type="email" placeholder="Your email" class="px-4 py-2 w-full bg-gray-800 border-none !rounded-button rounded-r-none focus:outline-none focus:ring-2 focus:ring-primary text-white">
+<button type="submit" class="px-4 py-2 bg-primary text-white !rounded-button rounded-l-none whitespace-nowrap hover:bg-primary/90 transition">Subscribe</button>
+</form>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm">© 2025 Pure Bloom. All rights reserved.</p>
+<div class="flex space-x-4 mt-4 md:mt-0">
+<a href="#" class="text-gray-400 text-sm hover:text-white transition">Privacy Policy</a>
+<a href="#" class="text-gray-400 text-sm hover:text-white transition">Terms of Service</a>
+<a href="#" class="text-gray-400 text-sm hover:text-white transition">Shipping Policy</a>
+</div>
+<div class="flex space-x-3 mt-4 md:mt-0">
+<div class="w-8 h-8 flex items-center justify-center text-gray-400">
+<i class="ri-visa-line ri-lg"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center text-gray-400">
+<i class="ri-mastercard-line ri-lg"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center text-gray-400">
+<i class="ri-paypal-line ri-lg"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center text-gray-400">
+<i class="ri-apple-pay-line ri-lg"></i>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- Shopping Cart Panel -->
+<div id="cart-panel" class="cart-panel fixed top-0 right-0 h-full w-full md:w-96 bg-white shadow-xl z-50 overflow-y-auto">
+<div class="p-4 border-b sticky top-0 bg-white z-10">
+<div class="flex justify-between items-center">
+<h2 class="text-xl font-semibold text-gray-900">Your Cart</h2>
+<button id="close-cart" class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-700">
+<i class="ri-close-line ri-lg"></i>
+</button>
+</div>
+</div>
+<div id="cart-items" class="p-4">
+<!-- Cart items will be dynamically added here -->
+<div class="text-center py-10 text-gray-500">
+<div class="w-16 h-16 mx-auto flex items-center justify-center text-gray-300 mb-4">
+<i class="ri-shopping-cart-line ri-3x"></i>
+</div>
+<p>Your cart is empty</p>
+<button id="continue-shopping" class="mt-4 px-6 py-2 bg-primary text-white font-medium !rounded-button whitespace-nowrap hover:bg-primary/90 transition">Continue Shopping</button>
+</div>
+</div>
+<div id="cart-footer" class="p-4 border-t sticky bottom-0 bg-white hidden">
+<div class="flex justify-between items-center mb-4">
+<button id="remove-all" class="text-sm text-red-500 hover:text-red-700 transition">Remove All Items</button>
+<div class="text-right">
+<p class="text-gray-600">Subtotal</p>
+<p id="cart-subtotal" class="text-xl font-bold text-gray-900">$0.00</p>
+</div>
+</div>
+<button id="checkout-btn" class="w-full py-3 bg-primary text-white font-medium !rounded-button whitespace-nowrap hover:bg-primary/90 transition">
+Proceed to Checkout
+</button>
+</div>
+</div>
+<!-- Checkout Modal -->
+<div id="checkout-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+<div class="bg-white rounded-lg max-w-lg w-full max-h-[90vh] overflow-y-auto">
+<div class="p-4 border-b sticky top-0 bg-white z-10">
+<div class="flex justify-between items-center">
+<h2 class="text-xl font-semibold text-gray-900">Checkout</h2>
+<button id="close-checkout" class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-700">
+<i class="ri-close-line ri-lg"></i>
+</button>
+</div>
+</div>
+<div class="p-6">
+<!-- Checkout Steps -->
+<div class="flex justify-between mb-8">
+<div class="checkout-step active" data-step="1">
+<div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-2">1</div>
+<p class="text-xs text-center">Shipping</p>
+</div>
+<div class="checkout-step" data-step="2">
+<div class="w-8 h-8 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center mx-auto mb-2">2</div>
+<p class="text-xs text-center">Payment</p>
+</div>
+<div class="checkout-step" data-step="3">
+<div class="w-8 h-8 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center mx-auto mb-2">3</div>
+<p class="text-xs text-center">Review</p>
+</div>
+</div>
+<!-- Step 1: Shipping Information -->
+<div id="checkout-step-1" class="checkout-step-content">
+<h3 class="text-lg font-medium text-gray-900 mb-4">Shipping Information</h3>
+<form id="shipping-form" class="space-y-4">
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+<input type="text" id="first-name" class="w-full px-3 py-2 border border-gray-300 !rounded-button focus:outline-none focus:ring-2 focus:ring-primary">
+</div>
+<div>
+<label for="last-name" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+<input type="text" id="last-name" class="w-full px-3 py-2 border border-gray-300 !rounded-button focus:outline-none focus:ring-2 focus:ring-primary">
+</div>
+</div>
+<div>
+<label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+<input type="email" id="email" class="w-full px-3 py-2 border border-gray-300 !rounded-button focus:outline-none focus:ring-2 focus:ring-primary">
+</div>
+<div>
+<label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+<input type="tel" id="phone" class="w-full px-3 py-2 border border-gray-300 !rounded-button focus:outline-none focus:ring-2 focus:ring-primary">
+</div>
+<div>
+<label for="address" class="block text-sm font-medium text-gray-700 mb-1">Address</label>
+<input type="text" id="address" class="w-full px-3 py-2 border border-gray-300 !rounded-button focus:outline-none focus:ring-2 focus:ring-primary">
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label for="city" class="block text-sm font-medium text-gray-700 mb-1">City</label>
+<input type="text" id="city" class="w-full px-3 py-2 border border-gray-300 !rounded-button focus:outline-none focus:ring-2 focus:ring-primary">
+</div>
+<div>
+<label for="zip" class="block text-sm font-medium text-gray-700 mb-1">ZIP Code</label>
+<input type="text" id="zip" class="w-full px-3 py-2 border border-gray-300 !rounded-button focus:outline-none focus:ring-2 focus:ring-primary">
+</div>
+</div>
+<div>
+<label for="country" class="block text-sm font-medium text-gray-700 mb-1">Country</label>
+<div class="relative">
+<select id="country" class="w-full px-3 py-2 border border-gray-300 !rounded-button focus:outline-none focus:ring-2 focus:ring-primary appearance-none pr-8">
+<option value="">Select Country</option>
+<option value="US">United States</option>
+<option value="CA">Canada</option>
+<option value="UK">United Kingdom</option>
+<option value="AU">Australia</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+<i class="ri-arrow-down-s-line"></i>
+</div>
+</div>
+</div>
+<div class="pt-4">
+<button type="button" id="shipping-next" class="w-full py-3 bg-primary text-white font-medium !rounded-button whitespace-nowrap hover:bg-primary/90 transition">Continue to Payment</button>
+</div>
+</form>
+</div>
+<!-- Step 2: Payment Method -->
+<div id="checkout-step-2" class="checkout-step-content hidden">
+<h3 class="text-lg font-medium text-gray-900 mb-4">Payment Method</h3>
+<div class="space-y-4">
+<div class="border border-gray-300 !rounded-button p-4">
+<div class="flex items-center mb-4">
+<div class="custom-radio checked" data-payment="credit-card"></div>
+<label class="ml-2 text-gray-700">Credit / Debit Card</label>
+</div>
+<div id="credit-card-form" class="space-y-4">
+<div>
+<label for="card-number" class="block text-sm font-medium text-gray-700 mb-1">Card Number</label>
+<input type="text" id="card-number" placeholder="1234 5678 9012 3456" class="w-full px-3 py-2 border border-gray-300 !rounded-button focus:outline-none focus:ring-2 focus:ring-primary">
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label for="expiry" class="block text-sm font-medium text-gray-700 mb-1">Expiry Date</label>
+<input type="text" id="expiry" placeholder="MM/YY" class="w-full px-3 py-2 border border-gray-300 !rounded-button focus:outline-none focus:ring-2 focus:ring-primary">
+</div>
+<div>
+<label for="cvv" class="block text-sm font-medium text-gray-700 mb-1">CVV</label>
+<input type="text" id="cvv" placeholder="123" class="w-full px-3 py-2 border border-gray-300 !rounded-button focus:outline-none focus:ring-2 focus:ring-primary">
+</div>
+</div>
+<div>
+<label for="card-name" class="block text-sm font-medium text-gray-700 mb-1">Name on Card</label>
+<input type="text" id="card-name" class="w-full px-3 py-2 border border-gray-300 !rounded-button focus:outline-none focus:ring-2 focus:ring-primary">
+</div>
+</div>
+</div>
+<div class="border border-gray-300 !rounded-button p-4">
+<div class="flex items-center">
+<div class="custom-radio" data-payment="paypal"></div>
+<label class="ml-2 text-gray-700">PayPal</label>
+<div class="w-6 h-6 flex items-center justify-center text-blue-500 ml-2">
+<i class="ri-paypal-fill"></i>
+</div>
+</div>
+</div>
+<div class="border border-gray-300 !rounded-button p-4">
+<div class="flex items-center">
+<div class="custom-radio" data-payment="apple-pay"></div>
+<label class="ml-2 text-gray-700">Apple Pay</label>
+<div class="w-6 h-6 flex items-center justify-center text-black ml-2">
+<i class="ri-apple-fill"></i>
+</div>
+</div>
+</div>
+<div class="pt-4 flex space-x-4">
+<button type="button" id="payment-prev" class="w-1/2 py-3 bg-gray-200 text-gray-800 font-medium !rounded-button whitespace-nowrap hover:bg-gray-300 transition">Back</button>
+<button type="button" id="payment-next" class="w-1/2 py-3 bg-primary text-white font-medium !rounded-button whitespace-nowrap hover:bg-primary/90 transition">Review Order</button>
+</div>
+</div>
+</div>
+<!-- Step 3: Review Order -->
+<div id="checkout-step-3" class="checkout-step-content hidden">
+<h3 class="text-lg font-medium text-gray-900 mb-4">Review Your Order</h3>
+<div class="space-y-4">
+<div class="border border-gray-200 !rounded-button overflow-hidden">
+<div class="bg-gray-50 p-3 border-b border-gray-200">
+<h4 class="font-medium text-gray-900">Order Summary</h4>
+</div>
+<div class="p-3">
+<div id="review-items" class="space-y-3">
+<!-- Order items will be added here dynamically -->
+</div>
+<div class="border-t border-gray-200 mt-4 pt-4">
+<div class="flex justify-between mb-2">
+<span class="text-gray-600">Subtotal</span>
+<span id="review-subtotal" class="font-medium">$0.00</span>
+</div>
+<div class="flex justify-between mb-2">
+<span class="text-gray-600">Shipping</span>
+<span class="font-medium">$5.99</span>
+</div>
+<div class="flex justify-between font-bold text-lg">
+<span>Total</span>
+<span id="review-total">$0.00</span>
+</div>
+</div>
+</div>
+</div>
+<div class="border border-gray-200 !rounded-button overflow-hidden">
+<div class="bg-gray-50 p-3 border-b border-gray-200">
+<h4 class="font-medium text-gray-900">Shipping Address</h4>
+</div>
+<div class="p-3">
+<p id="review-address" class="text-gray-700"></p>
+</div>
+</div>
+<div class="border border-gray-200 !rounded-button overflow-hidden">
+<div class="bg-gray-50 p-3 border-b border-gray-200">
+<h4 class="font-medium text-gray-900">Payment Method</h4>
+</div>
+<div class="p-3">
+<p id="review-payment" class="text-gray-700"></p>
+</div>
+</div>
+<div class="flex items-center mb-4">
+<div class="custom-checkbox" id="terms-checkbox"></div>
+<label class="ml-2 text-gray-700 text-sm">I agree to the <a href="#" class="text-primary">Terms and Conditions</a> and <a href="#" class="text-primary">Privacy Policy</a></label>
+</div>
+<div class="pt-4 flex space-x-4">
+<button type="button" id="review-prev" class="w-1/2 py-3 bg-gray-200 text-gray-800 font-medium !rounded-button whitespace-nowrap hover:bg-gray-300 transition">Back</button>
+<button type="button" id="place-order" class="w-1/2 py-3 bg-primary text-white font-medium !rounded-button whitespace-nowrap hover:bg-primary/90 transition" disabled>Place Order</button>
+</div>
+</div>
+</div>
+<!-- Order Confirmation -->
+<div id="order-confirmation" class="hidden text-center py-8">
+<div class="w-16 h-16 mx-auto flex items-center justify-center bg-green-100 text-green-500 rounded-full mb-4">
+<i class="ri-check-line ri-2x"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Thank You for Your Order!</h3>
+<p class="text-gray-600 mb-6">Your order has been placed successfully. We'll send you a confirmation email shortly.</p>
+<p class="text-gray-800 font-medium mb-6">Order #: <span id="order-number">PB25052100123</span></p>
+<button id="continue-shopping-final" class="px-6 py-3 bg-primary text-white font-medium !rounded-button whitespace-nowrap hover:bg-primary/90 transition">Continue Shopping</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Mobile menu toggle
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+});
+// Cart functionality
+const cartButton = document.getElementById('cart-button');
+const cartPanel = document.getElementById('cart-panel');
+const closeCartButton = document.getElementById('close-cart');
+const continueShoppingButton = document.getElementById('continue-shopping');
+const cartItems = document.getElementById('cart-items');
+const cartFooter = document.getElementById('cart-footer');
+const cartSubtotal = document.getElementById('cart-subtotal');
+const cartCount = document.getElementById('cart-count');
+const removeAllButton = document.getElementById('remove-all');
+const checkoutButton = document.getElementById('checkout-btn');
+let cart = [];
+// Add to cart buttons
+const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+addToCartButtons.forEach(button => {
+button.addEventListener('click', function() {
+const productId = this.getAttribute('data-id');
+const productName = this.getAttribute('data-name');
+const productPrice = parseFloat(this.getAttribute('data-price'));
+const productImage = this.getAttribute('data-image');
+// Check if product is already in cart
+const existingItem = cart.find(item => item.id === productId);
+if (existingItem) {
+existingItem.quantity += 1;
+// Update button text to "Remove from Cart"
+this.innerHTML = '<span class="flex items-center"><i class="ri-delete-bin-line mr-2"></i>Remove from Cart</span>';
+this.classList.remove('bg-primary');
+this.classList.add('bg-red-500', 'hover:bg-red-600');
+this.classList.add('remove-from-cart');
+} else {
+cart.push({
+id: productId,
+name: productName,
+price: productPrice,
+image: productImage,
+quantity: 1,
+selected: true
+});
+// Update button text to "Remove from Cart"
+this.innerHTML = '<span class="flex items-center"><i class="ri-delete-bin-line mr-2"></i>Remove from Cart</span>';
+this.classList.remove('bg-primary');
+this.classList.add('bg-red-500', 'hover:bg-red-600');
+this.classList.add('remove-from-cart');
+}
+updateCart();
+// Open cart panel
+cartPanel.classList.add('open');
+});
+});
+// Toggle cart panel
+cartButton.addEventListener('click', function() {
+cartPanel.classList.add('open');
+});
+closeCartButton.addEventListener('click', function() {
+cartPanel.classList.remove('open');
+});
+continueShoppingButton.addEventListener('click', function() {
+cartPanel.classList.remove('open');
+});
+// Remove all items
+removeAllButton.addEventListener('click', function() {
+cart = [];
+updateCart();
+// Reset all "Add to Cart" buttons
+addToCartButtons.forEach(button => {
+button.innerHTML = '<span class="flex items-center"><i class="ri-shopping-cart-add-line mr-2"></i>Add to Cart</span>';
+button.classList.remove('bg-red-500', 'hover:bg-red-600', 'remove-from-cart');
+button.classList.add('bg-primary', 'hover:bg-primary/90');
+});
+});
+// Update cart display
+function updateCart() {
+// Update cart count
+cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
+// Update cart items display
+if (cart.length === 0) {
+cartItems.innerHTML = `
+<div class="text-center py-10 text-gray-500">
+<div class="w-16 h-16 mx-auto flex items-center justify-center text-gray-300 mb-4">
+<i class="ri-shopping-cart-line ri-3x"></i>
+</div>
+<p>Your cart is empty</p>
+<button id="continue-shopping" class="mt-4 px-6 py-2 bg-primary text-white font-medium !rounded-button whitespace-nowrap hover:bg-primary/90 transition">Continue Shopping</button>
+</div>
+`;
+cartFooter.classList.add('hidden');
+// Re-add event listener to continue shopping button
+document.getElementById('continue-shopping').addEventListener('click', function() {
+cartPanel.classList.remove('open');
+});
+} else {
+let itemsHTML = '';
+cart.forEach(item => {
+itemsHTML += `
+<div class="flex items-center py-4 border-b border-gray-100 last:border-0">
+<div class="custom-checkbox ${item.selected ? 'checked' : ''}" data-id="${item.id}"></div>
+<div class="w-16 h-16 flex-shrink-0 ml-2">
+<img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover object-top rounded">
+</div>
+<div class="ml-4 flex-grow">
+<h4 class="text-sm font-medium text-gray-900">${item.name}</h4>
+<div class="flex justify-between items-center mt-2">
+<div class="flex items-center border border-gray-300 rounded-button">
+<button class="quantity-btn decrease w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-700" data-id="${item.id}">
+<i class="ri-subtract-line"></i>
+</button>
+<input type="number" value="${item.quantity}" min="1" class="w-10 h-8 text-center border-none focus:outline-none text-sm" data-id="${item.id}">
+<button class="quantity-btn increase w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-700" data-id="${item.id}">
+<i class="ri-add-line"></i>
+</button>
+</div>
+<div class="text-right">
+<p class="text-sm font-medium text-gray-900">$${(item.price * item.quantity).toFixed(2)}</p>
+<button class="remove-item text-xs text-red-500 hover:text-red-700 mt-1" data-id="${item.id}">Remove</button>
+</div>
+</div>
+</div>
+</div>
+`;
+});
+cartItems.innerHTML = itemsHTML;
+cartFooter.classList.remove('hidden');
+// Calculate subtotal
+const subtotal = cart
+.filter(item => item.selected)
+.reduce((total, item) => total + (item.price * item.quantity), 0);
+cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+// Add event listeners to quantity buttons
+const decreaseButtons = document.querySelectorAll('.quantity-btn.decrease');
+const increaseButtons = document.querySelectorAll('.quantity-btn.increase');
+const quantityInputs = cartItems.querySelectorAll('input[type="number"]');
+const removeButtons = document.querySelectorAll('.remove-item');
+const checkboxes = document.querySelectorAll('.custom-checkbox');
+decreaseButtons.forEach(button => {
+button.addEventListener('click', function() {
+const id = this.getAttribute('data-id');
+const item = cart.find(item => item.id === id);
+if (item && item.quantity > 1) {
+item.quantity -= 1;
+updateCart();
+}
+});
+});
+increaseButtons.forEach(button => {
+button.addEventListener('click', function() {
+const id = this.getAttribute('data-id');
+const item = cart.find(item => item.id === id);
+if (item) {
+item.quantity += 1;
+updateCart();
+}
+});
+});
+quantityInputs.forEach(input => {
+input.addEventListener('change', function() {
+const id = this.getAttribute('data-id');
+const item = cart.find(item => item.id === id);
+if (item) {
+const newQuantity = parseInt(this.value);
+if (newQuantity > 0) {
+item.quantity = newQuantity;
+updateCart();
+} else {
+this.value = item.quantity;
+}
+}
+});
+});
+removeButtons.forEach(button => {
+button.addEventListener('click', function() {
+const id = this.getAttribute('data-id');
+cart = cart.filter(item => item.id !== id);
+updateCart();
+// Reset corresponding "Add to Cart" button
+const addButton = document.querySelector(`.add-to-cart-btn[data-id="${id}"]`);
+if (addButton) {
+addButton.innerHTML = '<span class="flex items-center"><i class="ri-shopping-cart-add-line mr-2"></i>Add to Cart</span>';
+addButton.classList.remove('bg-red-500', 'hover:bg-red-600', 'remove-from-cart');
+addButton.classList.add('bg-primary', 'hover:bg-primary/90');
+}
+});
+});
+checkboxes.forEach(checkbox => {
+checkbox.addEventListener('click', function() {
+const id = this.getAttribute('data-id');
+const item = cart.find(item => item.id === id);
+if (item) {
+item.selected = !item.selected;
+this.classList.toggle('checked');
+updateCart();
+}
+});
+});
+}
+}
+// Checkout functionality
+const checkoutModal = document.getElementById('checkout-modal');
+const closeCheckoutButton = document.getElementById('close-checkout');
+checkoutButton.addEventListener('click', function() {
+// Check if there are selected items in the cart
+const hasSelectedItems = cart.some(item => item.selected);
+if (!hasSelectedItems) {
+alert('Please select at least one item to checkout.');
+return;
+}
+// Open checkout modal
+checkoutModal.classList.remove('hidden');
+// Populate review items
+updateReviewItems();
+});
+closeCheckoutButton.addEventListener('click', function() {
+checkoutModal.classList.add('hidden');
+});
+// Checkout steps navigation
+const shippingNextButton = document.getElementById('shipping-next');
+const paymentPrevButton = document.getElementById('payment-prev');
+const paymentNextButton = document.getElementById('payment-next');
+const reviewPrevButton = document.getElementById('review-prev');
+const placeOrderButton = document.getElementById('place-order');
+shippingNextButton.addEventListener('click', function() {
+// Validate shipping form
+const firstName = document.getElementById('first-name').value;
+const lastName = document.getElementById('last-name').value;
+const email = document.getElementById('email').value;
+const phone = document.getElementById('phone').value;
+const address = document.getElementById('address').value;
+const city = document.getElementById('city').value;
+const zip = document.getElementById('zip').value;
+const country = document.getElementById('country').value;
+if (!firstName || !lastName || !email || !phone || !address || !city || !zip || !country) {
+alert('Please fill in all required fields.');
+return;
+}
+// Move to payment step
+document.getElementById('checkout-step-1').classList.add('hidden');
+document.getElementById('checkout-step-2').classList.remove('hidden');
+// Update step indicators
+document.querySelector('.checkout-step[data-step="1"]').classList.remove('active');
+document.querySelector('.checkout-step[data-step="2"]').classList.add('active');
+document.querySelector('.checkout-step[data-step="1"] div').classList.remove('bg-primary', 'text-white');
+document.querySelector('.checkout-step[data-step="1"] div').classList.add('bg-gray-200', 'text-gray-600');
+document.querySelector('.checkout-step[data-step="2"] div').classList.remove('bg-gray-200', 'text-gray-600');
+document.querySelector('.checkout-step[data-step="2"] div').classList.add('bg-primary', 'text-white');
+});
+paymentPrevButton.addEventListener('click', function() {
+// Move back to shipping step
+document.getElementById('checkout-step-2').classList.add('hidden');
+document.getElementById('checkout-step-1').classList.remove('hidden');
+// Update step indicators
+document.querySelector('.checkout-step[data-step="2"]').classList.remove('active');
+document.querySelector('.checkout-step[data-step="1"]').classList.add('active');
+document.querySelector('.checkout-step[data-step="2"] div').classList.remove('bg-primary', 'text-white');
+document.querySelector('.checkout-step[data-step="2"] div').classList.add('bg-gray-200', 'text-gray-600');
+document.querySelector('.checkout-step[data-step="1"] div').classList.remove('bg-gray-200', 'text-gray-600');
+document.querySelector('.checkout-step[data-step="1"] div').classList.add('bg-primary', 'text-white');
+});
+paymentNextButton.addEventListener('click', function() {
+// Validate payment form if credit card is selected
+const selectedPayment = document.querySelector('.custom-radio.checked').getAttribute('data-payment');
+if (selectedPayment === 'credit-card') {
+const cardNumber = document.getElementById('card-number').value;
+const expiry = document.getElementById('expiry').value;
+const cvv = document.getElementById('cvv').value;
+const cardName = document.getElementById('card-name').value;
+if (!cardNumber || !expiry || !cvv || !cardName) {
+alert('Please fill in all card details.');
+return;
+}
+}
+// Move to review step
+document.getElementById('checkout-step-2').classList.add('hidden');
+document.getElementById('checkout-step-3').classList.remove('hidden');
+// Update step indicators
+document.querySelector('.checkout-step[data-step="2"]').classList.remove('active');
+document.querySelector('.checkout-step[data-step="3"]').classList.add('active');
+document.querySelector('.checkout-step[data-step="2"] div').classList.remove('bg-primary', 'text-white');
+document.querySelector('.checkout-step[data-step="2"] div').classList.add('bg-gray-200', 'text-gray-600');
+document.querySelector('.checkout-step[data-step="3"] div').classList.remove('bg-gray-200', 'text-gray-600');
+document.querySelector('.checkout-step[data-step="3"] div').classList.add('bg-primary', 'text-white');
+// Update review information
+updateReviewInfo();
+});
+reviewPrevButton.addEventListener('click', function() {
+// Move back to payment step
+document.getElementById('checkout-step-3').classList.add('hidden');
+document.getElementById('checkout-step-2').classList.remove('hidden');
+// Update step indicators
+document.querySelector('.checkout-step[data-step="3"]').classList.remove('active');
+document.querySelector('.checkout-step[data-step="2"]').classList.add('active');
+document.querySelector('.checkout-step[data-step="3"] div').classList.remove('bg-primary', 'text-white');
+document.querySelector('.checkout-step[data-step="3"] div').classList.add('bg-gray-200', 'text-gray-600');
+document.querySelector('.checkout-step[data-step="2"] div').classList.remove('bg-gray-200', 'text-gray-600');
+document.querySelector('.checkout-step[data-step="2"] div').classList.add('bg-primary', 'text-white');
+});
+// Terms checkbox
+const termsCheckbox = document.getElementById('terms-checkbox');
+termsCheckbox.addEventListener('click', function() {
+this.classList.toggle('checked');
+placeOrderButton.disabled = !this.classList.contains('checked');
+});
+// Place order
+placeOrderButton.addEventListener('click', function() {
+// Hide review step
+document.getElementById('checkout-step-3').classList.add('hidden');
+// Show confirmation
+document.getElementById('order-confirmation').classList.remove('hidden');
+// Generate random order number
+const orderNumber = 'PB' + new Date().getTime().toString().substring(5);
+document.getElementById('order-number').textContent = orderNumber;
+// Clear cart
+cart = [];
+updateCart();
+// Reset all "Add to Cart" buttons
+addToCartButtons.forEach(button => {
+button.innerHTML = '<span class="flex items-center"><i class="ri-shopping-cart-add-line mr-2"></i>Add to Cart</span>';
+button.classList.remove('bg-red-500', 'hover:bg-red-600', 'remove-from-cart');
+button.classList.add('bg-primary', 'hover:bg-primary/90');
+});
+});
+// Continue shopping after order
+const continueShoppingFinal = document.getElementById('continue-shopping-final');
+continueShoppingFinal.addEventListener('click', function() {
+checkoutModal.classList.add('hidden');
+cartPanel.classList.remove('open');
+// Reset checkout form
+resetCheckoutForm();
+});
+// Payment method selection
+const paymentRadios = document.querySelectorAll('.custom-radio[data-payment]');
+paymentRadios.forEach(radio => {
+radio.addEventListener('click', function() {
+// Remove checked class from all radios
+paymentRadios.forEach(r => r.classList.remove('checked'));
+// Add checked class to clicked radio
+this.classList.add('checked');
+// Show/hide credit card form
+const creditCardForm = document.getElementById('credit-card-form');
+if (this.getAttribute('data-payment') === 'credit-card') {
+creditCardForm.classList.remove('hidden');
+} else {
+creditCardForm.classList.add('hidden');
+}
+});
+});
+// Update review items
+function updateReviewItems() {
+const reviewItems = document.getElementById('review-items');
+const reviewSubtotal = document.getElementById('review-subtotal');
+const reviewTotal = document.getElementById('review-total');
+let itemsHTML = '';
+const selectedItems = cart.filter(item => item.selected);
+selectedItems.forEach(item => {
+itemsHTML += `
+<div class="flex items-center">
+<div class="w-12 h-12 flex-shrink-0">
+<img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover object-top rounded">
+</div>
+<div class="ml-3 flex-grow">
+<h4 class="text-sm font-medium text-gray-900">${item.name}</h4>
+<div class="flex justify-between items-center mt-1">
+<span class="text-xs text-gray-500">Qty: ${item.quantity}</span>
+<span class="text-sm font-medium text-gray-900">$${(item.price * item.quantity).toFixed(2)}</span>
+</div>
+</div>
+</div>
+`;
+});
+reviewItems.innerHTML = itemsHTML;
+// Calculate subtotal and total
+const subtotal = selectedItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+const shipping = 5.99;
+const total = subtotal + shipping;
+reviewSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+reviewTotal.textContent = `$${total.toFixed(2)}`;
+}
+// Update review information
+function updateReviewInfo() {
+const firstName = document.getElementById('first-name').value;
+const lastName = document.getElementById('last-name').value;
+const address = document.getElementById('address').value;
+const city = document.getElementById('city').value;
+const zip = document.getElementById('zip').value;
+const country = document.getElementById('country').options[document.getElementById('country').selectedIndex].text;
+const reviewAddress = document.getElementById('review-address');
+reviewAddress.textContent = `${firstName} ${lastName}, ${address}, ${city}, ${zip}, ${country}`;
+const selectedPayment = document.querySelector('.custom-radio.checked').getAttribute('data-payment');
+const reviewPayment = document.getElementById('review-payment');
+if (selectedPayment === 'credit-card') {
+const cardNumber = document.getElementById('card-number').value;
+const lastFour = cardNumber.slice(-4);
+reviewPayment.textContent = `Credit Card ending in ${lastFour}`;
+} else if (selectedPayment === 'paypal') {
+reviewPayment.textContent = 'PayPal';
+} else if (selectedPayment === 'apple-pay') {
+reviewPayment.textContent = 'Apple Pay';
+}
+}
+// Reset checkout form
+function resetCheckoutForm() {
+// Reset form fields
+document.getElementById('shipping-form').reset();
+document.getElementById('card-number').value = '';
+document.getElementById('expiry').value = '';
+document.getElementById('cvv').value = '';
+document.getElementById('card-name').value = '';
+// Reset steps
+document.getElementById('checkout-step-1').classList.remove('hidden');
+document.getElementById('checkout-step-2').classList.add('hidden');
+document.getElementById('checkout-step-3').classList.add('hidden');
+document.getElementById('order-confirmation').classList.add('hidden');
+// Reset step indicators
+document.querySelector('.checkout-step[data-step="1"]').classList.add('active');
+document.querySelector('.checkout-step[data-step="2"]').classList.remove('active');
+document.querySelector('.checkout-step[data-step="3"]').classList.remove('active');
+document.querySelector('.checkout-step[data-step="1"] div').classList.add('bg-primary', 'text-white');
+document.querySelector('.checkout-step[data-step="1"] div').classList.remove('bg-gray-200', 'text-gray-600');
+document.querySelector('.checkout-step[data-step="2"] div').classList.add('bg-gray-200', 'text-gray-600');
+document.querySelector('.checkout-step[data-step="2"] div').classList.remove('bg-primary', 'text-white');
+document.querySelector('.checkout-step[data-step="3"] div').classList.add('bg-gray-200', 'text-gray-600');
+document.querySelector('.checkout-step[data-step="3"] div').classList.remove('bg-primary', 'text-white');
+// Reset terms checkbox
+document.getElementById('terms-checkbox').classList.remove('checked');
+placeOrderButton.disabled = true;
+}
+// Event delegation for dynamically added "Remove from Cart" buttons
+document.addEventListener('click', function(e) {
+if (e.target.closest('.remove-from-cart')) {
+const button = e.target.closest('.remove-from-cart');
+const productId = button.getAttribute('data-id');
+// Remove item from cart
+cart = cart.filter(item => item.id !== productId);
+updateCart();
+// Reset button
+button.innerHTML = '<span class="flex items-center"><i class="ri-shopping-cart-add-line mr-2"></i>Add to Cart</span>';
+button.classList.remove('bg-red-500', 'hover:bg-red-600', 'remove-from-cart');
+button.classList.add('bg-primary', 'hover:bg-primary/90');
+}
+});
+});
+</script>
+</body>
+</html>
